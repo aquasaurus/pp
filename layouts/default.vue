@@ -18,7 +18,7 @@
       dark:bg-svg-dark-sm
       dark:md:bg-svg-dark-->
     <LayoutHeader
-      :title="nuxtApp._route.path.split('/').reverse()[0] || 'home'"
+      :title="route.meta.title === 'Home' ? 'home' : route.meta.title"
     />
     <main
       class="
@@ -36,4 +36,7 @@
 </style>
 <script setup>
 const nuxtApp = useNuxtApp()
+
+const route = useRoute()
+
 </script>

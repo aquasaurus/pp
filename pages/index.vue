@@ -115,4 +115,8 @@ const events = [
     image: "/testpol.webp",
   },
 ];
+
+definePageMeta({
+    title: "Home"
+})
 </script>
