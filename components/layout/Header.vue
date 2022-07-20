@@ -16,6 +16,12 @@ function getToggled() {
   return a;
 }
 
+const loggedIn = ref(true)
+
+function login() {
+    loggedIn.value = true;
+}
+
 const toggled = ref(getToggled());
 
 const profileRoutes = [
@@ -26,7 +32,7 @@ const profileRoutes = [
   },
   {
     name: `Logout`,
-    route: `/`,
+    route: () => loggedIn.value = false,
     key: `logout`,
   },
 ];
@@ -223,7 +229,7 @@ function resetState() {
                   class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 lg:items-center"
                 >
                   <span>
-                    <a
+                    <a v-if = "loggedIn"
                       :href="'javascript:void(0)'"
                       @click="(x) => setState('loginButton')"
                       :class="`${title === 'home' ? 'text-white hover:text-zinc-200' : 'text-black hover:dark:text-gray-600 hover:text-zinc-800'} group transition duration-500 ease-in-out tracking-wide px-3 flex flex-col space-y-4  lg:uppercase py-4 font-semibold`"
@@ -259,7 +265,7 @@ function resetState() {
                                                                     ease-in-out
                                             `"
                       >
-                        <NuxtLink
+                        <a
                           v-for="{
                             name: name2,
                             route: route2,
@@ -267,11 +273,25 @@ function resetState() {
                           } in profileRoutes"
                           :key="key2"
                           class="p-2 flex flex-nowrap text-zinc-800 hover:bg-zinc-100 hover:text-black"
-                          :to="route2"
-                          >{{ name2 }}</NuxtLink
+                          @click="route2"
+                          >{{ name2 }}</a
                         >
                       </div>
                     </a>
+                                        <button
+                      v-else
+                      target="_blank"
+                      :class="
+                        (title !== 'home'
+                          ? `text-gray-600 `
+                          : 'text-white ') + 
+                        (Array.isArray(route) ? 'group ' : '') +
+                        'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4  lg:uppercase py-4 font-semibold hover:dark:text-gray-600 hover:text-zinc-800'
+                      "
+                      @click="login"
+                    >
+                      <span class="py-1">Login</span>
+                    </button>
                   </span>
                 </div>
               </div>
