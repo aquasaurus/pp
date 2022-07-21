@@ -35,9 +35,9 @@
   </div>
 </template>
 <script setup>
-import { useMainConfig } from "@/store/mainconfig.js";
+import { useModalConfig } from "@/store/loginModal.ts";
 
-const mainConfig = useMainConfig();
+const mainConfig = useModalConfig();
 const emit = defineEmits(["okay", "noAccount"]);
 
 function noAccount() {

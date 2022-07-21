@@ -1,8 +1,12 @@
 <script setup>
 import Navigation from "@/data/Navigation";
 import * as Constants from "@/data/Constants";
-const { title } = defineProps(["title"]);
 import {useScroll} from "@vueuse/core"
+
+import { useModalConfig } from "@/store/loginModal.ts";
+const { title } = defineProps(["title"]);
+
+const mainConfig = useModalConfig(); 
 
 const _toggled = Navigation.map((x) => x.key);
 
@@ -306,7 +310,7 @@ function resetState() {
                         (Array.isArray(route) ? 'group ' : '') +
                         'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4  lg:uppercase py-4 font-semibold hover:dark:text-gray-600 hover:text-zinc-800'
                       "
-                      @click="login"
+                      @click="mainConfig.openLogin"
                     >
                       <span class="py-1">Login</span>
                     </button>
