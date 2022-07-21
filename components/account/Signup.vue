@@ -31,7 +31,7 @@
       >Passwords do not match!</span
     >
     <div class="max-w-sm font-bold">
-      <FormButtonSuccess caption="Register" @click="signUp" />
+      <FormButtonSuccess caption="Apply" @click="signUp" />
     </div>
     <a
       href="javascript:void(0)"
