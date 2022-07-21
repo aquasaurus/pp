@@ -37,7 +37,7 @@ const profileRoutes = [
   },
   {
     name: `Logout`,
-    route: () => loggedIn.value = false,
+    route: () => mainConfig.logout(),
     key: `logout`,
   },
 ];
@@ -251,13 +251,13 @@ function resetState() {
                   class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 lg:items-center"
                 >
                   <span>
-                    <a v-if = "loggedIn"
+                    <a v-if = "mainConfig.loggedIn"
                       :href="'javascript:void(0)'"
                       @click="(x) => setState('loginButton')"
                       :class="`${title === 'home' ? 'text-white hover:text-zinc-200' : 'text-black hover:dark:text-gray-600 hover:text-zinc-800'} group transition duration-500 ease-in-out tracking-wide px-3 flex flex-col space-y-4  lg:uppercase py-4 font-semibold`"
                     >
                     <div class = "flex flex-row items-center space-x-4">
-                      <span class="py-1">Ray</span>
+                      <span class="py-1">{{mainConfig.username}}</span>
                       <span>
                         <SVGDown />
                       </span>

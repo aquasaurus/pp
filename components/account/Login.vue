@@ -59,6 +59,8 @@ function setData(key, val) {
 }
 
 async function login() {
+mainConfig.login(data.value.email)
+/*
   const result = await fetch("http://localhost:8000/users/login", {
     method: "POST",
     headers: { contentType: "application/json" },
@@ -77,7 +79,8 @@ async function login() {
   }
 
   mainConfig.login(res.body.email);
+  */
   emit("okay");
-  router.go()
+//  router.go()
 }
 </script>

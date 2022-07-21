@@ -5,9 +5,18 @@ export const useModalConfig = defineStore("loginModals", {
     return {
       loginModalIsOpen: false,
       signupModalIsOpen: false,
+      loggedIn: false,
+      username: "",
     };
   },
   actions: {
+    login(name: string) {
+      this.loggedIn = true;
+      this.username = name;
+    },
+    logout() {
+      this.loggedIn = false;
+    },
     openLogin() {
       this.loginModalIsOpen = true;
     },
