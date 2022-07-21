@@ -27,8 +27,8 @@
       "
     >
       <div class="p-2 flex flex-col space-y-4 items-start">
-        <div class="text-2xl font-black">
-            Placeholder
+        <div class="text-1xl font-white">
+            POLICE PUBLIC CONNECT
         </div>
       </div>
       <div
@@ -42,8 +42,8 @@
         "
       >
         <div class="flex flex-col text-sm">
-            <span>Lorem</span>
-            <span>Ipsum</span>
+            <span>Easwari Engineering College</span>
+            <span><br> Developed by students of <br> Artificial Intelligence & Data Science Department</span>
         </div>
       </div>
     </div>

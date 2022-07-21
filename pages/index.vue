@@ -133,7 +133,7 @@ const events = [
   },
   {
     title: "Support",
-    description: "Gender justice and women's rights.",
+    description: " We work by your side ",
     image: "/testpol.webp",
   },
   {

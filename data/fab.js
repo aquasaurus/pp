@@ -16,10 +16,10 @@ export default [
   },
 
   {
-    name: "Home",
+    name: "Feedback",
     route: "/",
-    key: "home3",
-    tooltip: "Go Home",
-    routeIcon: "🏠",
+    key: "feedback",
+    tooltip: "Feedback",
+    routeIcon: "📝",
   },
 ];
