@@ -9,8 +9,8 @@
         data-aos-duration="260"
       > 
         <div class="flex flex-col space-y-4">
-        <span class="text-4xl lg:text-7xl">{{typer[current][0]}}</span>
-        <span class="text-4xl lg:text-7xl">{{typer[current][1]}}</span>
+        <span class="text-4xl lg:text-7xl t1">{{current[0]}}</span>
+        <span class="text-4xl lg:text-7xl t2">{{current[1]}}</span>
         </div>
 
         <button class="bg-blue-500 rounded-full px-4 py-1 w-48" @click="mainConfig.openSignup">
@@ -148,11 +148,37 @@ definePageMeta({
 })
 
 const typer=[['POLICE' ,'PUBLIC CONNECT'],['WE CONNECT WITH','OUR PEOPLE'],['WE HELP', 'OUR PEOPLE']]
-const current=ref(0)
+const current=ref(["", "", 0])
 onMounted(() => 
 {setInterval(()=>{
-  if(current.value===typer.length-1) current.value=0 
-  else current.value +=1
+  if(current.value[2]===typer.length-1) {
+    current.value[2]=0 
+    current.value[0] = ""
+    current.value[1] = ""
+    let n;
+    for(let i = 0; i < typer[current.value[2]][0].length; ++i) {
+      setTimeout(() => current.value[0] += typer[current.value[2]][0][i], 50 * i)
+      n = i;
+    }
+    console.log(current.value)
+    for(let j = 0; j < typer[current.value[2]][1].length; ++j) {
+      setTimeout(() => current.value[1] += typer[current.value[2]][1][j], (50 * (n + j)))
+    }
+  }
+  else {
+    current.value[2] +=1
+    current.value[0] = ""
+    current.value[1] = ""
+    let n;
+    for(let i = 0; i < typer[current.value[2]][0].length; ++i) {
+      setTimeout(() => current.value[0] += typer[current.value[2]][0][i], 50 * i)
+      n = i;
+    }
+    console.log(current.value)
+    for(let j = 0; j < typer[current.value[2]][1].length; ++j) {
+      setTimeout(() => current.value[1] += typer[current.value[2]][1][j], (50 * (n + j)))
+    }
+  }
 },4000)
 })
 

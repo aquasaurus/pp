@@ -49,6 +49,6 @@ onMounted(() => {
 
 onBeforeUnmount(() => clearInterval(interval));
 
-const next = () => current.value === images.length - 2 ? (current.value = 0) : current.value++;
-const prev = () => current.value === 0 ? (current.value = images.length - 2) : current.value--;
+const next = () => current.value === images.length - 1 ? (current.value = 0) : current.value++;
+const prev = () => current.value === 0 ? (current.value = images.length - 1) : current.value--;
 </script>
