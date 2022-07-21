@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col space-y-8">
-    <div class="bg-gray-800 text-white min-h-screen">
+    <div class="bg-gray-800 relative -top-20 text-white min-h-screen">
       <div
         class="flex flex-col space-y-16 px-4 py-12 mt-24 lg:mt-72 max-w-8xl mx-auto justify-center h-full"
         data-aos="fade-up"
@@ -36,14 +36,14 @@
       </div>
     </div>
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-12 py-12 text-white max-w-7xl mx-auto"
+      class="grid grid-cols-1 lg:grid-cols-2 gap-12 py-12 text-white max-w-7xl mx-auto p-2 lg:p-0"
       data-aos="fade-up"
       data-aos-easing="linear"
       data-aos-delay="100"
       data-aos-duration="260"
     >
       <div
-        class="bg-gray-800 rounded-xl lg:text-right text-center p-2 lg:p-8 flex flex-col space-y-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
+        class="bg-gray-600 rounded-xl lg:text-right text-center p-2 lg:p-8 flex flex-col space-y-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 "
       >
         <span class="text-4xl">Vision</span>
         <span class = "text-justify"
@@ -58,7 +58,7 @@
         >
       </div>
       <div
-        class="bg-gray-700 rounded-xl lg:text-left text:center p-2 lg:p-8 flex flex-col space-y-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+        class="bg-gray-500 rounded-xl lg:text-left text:center p-2 lg:p-8 flex flex-col space-y-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
       >
         <span class="text-4xl">Mission</span>
         <span class = "text-justify"

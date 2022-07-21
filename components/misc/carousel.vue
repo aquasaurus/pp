@@ -10,17 +10,17 @@
         relative
       "
     >
-      <div class="relative inset-0 flex flex-row justify-start transition-all duration-500 ease-in-out transform" :style="{left:`-${current * 60}%`}">
+      <div class="relative inset-0 flex flex-row justify-start transition-all duration-500 ease-in-out transform" :style="{left:`-${current * 100}%`}">
         <div
           v-for="item in images"
           :key="item"
-          class="p-2 relative flex-shrink-0"
+          class="p-2 relative flex-shrink-0 w-full"
         >
           <img :src="item" class="h-72 lg:h-[28rem] mx-auto" />
         </div>
       </div>
-      <button class = "absolute left-0 inset-y-0 my-auto stroke-white stroke-2" @click="prev"><div class = "rounded-full p-2 bg-black/70"><SVGDown :size="24" /></div></button>
-      <button class = "absolute right-0 inset-y-0 my-auto stroke-white stroke-2" @click="next"><div class = "rounded-full p-2 bg-black/70"><SVGDown :size="24" /></div></button>
+      <button class = "absolute left-0 inset-y-0 my-auto stroke-white fill-white stroke-2 transform rotate-180" @click="prev"><div class = "rounded-full p-2 bg-black/70"><SVGArrow :size="24" /></div></button>
+      <button class = "absolute right-0 inset-y-0 my-auto stroke-white fill-white stroke-2" @click="next"><div class = "rounded-full p-2 bg-black/70"><SVGArrow :size="24" /></div></button>
 </div>
   </div>
 </template>

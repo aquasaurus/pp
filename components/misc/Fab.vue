@@ -3,31 +3,28 @@
     <div class="fixed p-4 bottom-0 right-0 flex flex-col items-center z-40">
       <div
         id="fabItems"
-        :class="`transform transition-all duration-500 ease-in-out mb-7  ${
-          toggleNav ? 'max-h-[60rem]' : 'max-h-0 overflow-y-hidden'
+        :class="`transform transition-all duration-500 ease-in-out mb-7 ${
+          toggleNav ? 'translate-x-0' : 'translate-x-120 overflow-x-hidden'
         }`"
       >
-        <ul :class="toggleNav && ` flex-col items-center space-y-4 w-full mx-auto`">
-          <div
-            v-for="navItem in Navigation"
-            :key="navItem.key"
-          >
+        <ul
+          :class="
+            ` flex-col items-center space-y-4 w-full mx-auto`
+          "
+        >
+          <div v-for="navItem in nav" :key="navItem.key">
             <NuxtLink
               :to="navItem.route"
               class="relative p-2 group flex items-center"
             >
-              <li class="
-                  rounded-full
-                  flex
-                  items-center
-                  p-4
-                  w-16
-                  h-16
-                  bg-gray-600
-                ">
+              <li
+                class="rounded-full relative flex group items-center p-4 w-16 h-16 bg-gray-600"
+              >
                 <div class="px-auto flex items-center mx-auto">
                   {{ navItem.routeIcon }}
                 </div>
+                <div :class = "`absolute -left-24 max-w-[70rem] transition-all overflow-hidden duration-500 ease-in-out text-right lg:max-w-0 lg:group-hover:max-w-[70rem]`">
+                <MiscTag>{{navItem.tooltip}}</MiscTag></div>
               </li>
             </NuxtLink>
           </div>
@@ -36,15 +33,7 @@
 
       <div
         id="fabButton"
-        class="
-          rounded-full
-          bg-gray-500
-          flex
-          items-center
-          w-16
-          h-16
-          z-50
-        "
+        class="rounded-full bg-gray-500 flex items-center w-16 h-16 z-50"
       >
         <button
           :class="`p-4 transform transition duration-500 ease-in-out mx-auto block ${
@@ -52,8 +41,22 @@
           }`"
           @click="toggleBoth"
         >
-          <span v-if="toggleNav">×</span>
-          <span v-else>+</span>
+          <svg
+            :class="`block h-8 w-8 stroke-white stroke-2  ${toggleNav ? 'rotate-45': 'rotate-0'}`"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              :class="`transition-all duration-500 transform ease-in-out`"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              :d="
+                `M 0 12 h 24 M 12 0 v 24 m 0`
+              "
+            />
+          </svg>
         </button>
       </div>
     </div>
@@ -66,39 +69,19 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    nav: {
-      type: Array,
-      default: () => {
-        return [
-          {
-            name: 'Home',
-            route: '/',
-            key: 'home',
-            routeIcon: '🏠',
-          },
-        ]
-      },
-    },
-  },
-  data() {
-    return {
-      toggleNav: false,
-      Navigation: this.nav,
-    }
-  },
-  methods: {
-    toggleOff() {
-      this.toggleNav = false
-    },
-    toggleBoth() {
-      this.toggleNav = !this.toggleNav
-    },
-    toggleOn() {
-      this.toggleNav = true
-    },
-  },
+<script setup>
+const { nav } = defineProps(["nav"]);
+const toggleNav = ref(false);
+
+function toggleBoth() {
+  toggleNav.value = !toggleNav.value;
+}
+
+function toggleOn() {
+  toggleNav.value = true;
+}
+
+function toggleOff() {
+  toggleNav.value = false;
 }
 </script>

@@ -2,6 +2,7 @@
 import Navigation from "@/data/Navigation";
 import * as Constants from "@/data/Constants";
 const { title } = defineProps(["title"]);
+import {useScroll} from "@vueuse/core"
 
 const _toggled = Navigation.map((x) => x.key);
 
@@ -37,6 +38,13 @@ const profileRoutes = [
   },
 ];
 
+const header = ref(null);
+const _offsetTop = ref(0);
+const offsetTop = () => {
+  _offsetTop.value = header.value?.offsetTop;
+};
+setInterval(() => offsetTop(), 1000);
+
 function toggleOff() {
   toggleNav.value = false;
 }
@@ -62,7 +70,17 @@ function resetState() {
 </script>
 <template>
   <div
-    class="bg-white lg:bg-white/10 shadow-md max-w-full block w-full fixed top-0 z-50"
+    ref="header"
+    :class="`
+    ${toggleNav ? `bg-white` : `bg-gray-600/60`}
+    ${_offsetTop ? `lg:bg-gray-400/40` : `lg:bg-transparent`}
+    shadow-md
+    max-w-full transition duration-500 ease-in-out
+    w-full
+    sticky
+    top-0
+    z-50
+  `"
   >
     <div class="max-w-9xl mx-auto px-2 lg:px-8 lg:mt-4">
       <div class="relative flex items-center justify-between h-16">
