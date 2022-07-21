@@ -76,8 +76,8 @@ function resetState() {
   <div
     ref="header"
     :class="`
-    ${toggleNav ? `bg-white` : `bg-gray-600/60`}
-    ${_offsetTop ? `lg:bg-gray-400/40` : `lg:bg-transparent`}
+    ${toggleNav ? `bg-gray-700` : `bg-gray-600/60`}
+    ${_offsetTop ? `lg:bg-gray-700/80` : `lg:bg-gray-700/40`}
     shadow-md
     max-w-full transition duration-500 ease-in-out
     w-full
@@ -96,8 +96,8 @@ function resetState() {
                       justify-center
                       p-2
                       rounded-md
-                      text-black  lg:text-zinc-700 
-                      hover:text-zinc-700 dark:text-black
+                      text-white  lg:text-zinc-700 
+                      hover:text-zinc-700 dark:text-white
                     `"
             @click="toggleBoth"
           >
@@ -138,7 +138,7 @@ function resetState() {
             </NuxtLink>
           </div>
           <div
-            :class="`overflow-y-auto  lg:overflow-y-visible text-md lg:text-base z-40 block h-full top-12 left-0 w-full bg-white  lg:bg-transparent fixed  lg:static transform transition duration-500 ease-in-out  lg:translate-x-0 p-8  lg:p-0  lg:block ${
+            :class="`overflow-y-auto  lg:overflow-y-visible text-md lg:text-base z-40 block h-full top-12 left-0 w-full bg-gray-700  lg:bg-transparent fixed  lg:static transform transition duration-500 ease-in-out  lg:translate-x-0 p-8  lg:p-0  lg:block ${
               toggleNav ? 'translate-x-0' : '-translate-x-130  lg:ml-6'
             }`"
           >
@@ -170,7 +170,7 @@ function resetState() {
                         (title === key ? key !== 'home'
                           ? `text-gray-600 `
                           : 'text-white '
-                          : key !== 'home' ? 'text-black border-transparent ' : 'text-white border-transparent ') +
+                          : key !== 'home' ? 'text-white border-transparent ' : 'text-white border-transparent ') +
                         (Array.isArray(route) ? 'group ' : '') +
                         'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4  lg:uppercase py-4 font-semibold hover:dark:text-gray-600 hover:text-zinc-800'
                       "
@@ -185,7 +185,7 @@ function resetState() {
                         (title === key ? key !== 'home'
                           ? `text-gray-600 `
                           : 'text-white '
-                          : key !== 'home' ? 'text-black border-transparent ' : 'text-white border-transparent ') +                        (Array.isArray(route) ? 'group ' : '') +
+                          : key !== 'home' ? 'text-white border-transparent ' : 'text-white border-transparent ') +                        (Array.isArray(route) ? 'group ' : '') +
                         'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4  lg:uppercase py-4 font-semibold hover:dark:text-gray-600 hover:text-zinc-800'
                       "
                     >
@@ -223,7 +223,7 @@ function resetState() {
                         <NuxtLink
                           v-for="{ name2, route2, key2 } in route"
                           :key="key2"
-                          class="p-2 flex flex-nowrap text-zinc-800 hover:bg-zinc-100 hover:text-black"
+                          class="p-2 flex flex-nowrap text-zinc-800 hover:bg-zinc-100 hover:text-white"
                           :to="route2"
                           >{{ name2 }}</NuxtLink
                         >
@@ -237,7 +237,7 @@ function resetState() {
                         (title === key ? key !== 'home'
                           ? `text-gray-600 `
                           : 'text-white '
-                          : key !== 'home' ? 'text-black border-transparent ' : 'text-white border-transparent ') +
+                          : key !== 'home' ? 'text-white border-transparent ' : 'text-white border-transparent ') +
                         (Array.isArray(route) ? 'group ' : '') +
                         'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4  lg:uppercase py-4 font-semibold hover:dark:text-gray-600 hover:text-zinc-800'
                       "
@@ -254,7 +254,7 @@ function resetState() {
                     <a v-if = "mainConfig.loggedIn"
                       :href="'javascript:void(0)'"
                       @click="(x) => setState('loginButton')"
-                      :class="`${title === 'home' ? 'text-white hover:text-zinc-200' : 'text-black hover:dark:text-gray-600 hover:text-zinc-800'} group transition duration-500 ease-in-out tracking-wide px-3 flex flex-col space-y-4  lg:uppercase py-4 font-semibold`"
+                      :class="`${title === 'home' ? 'text-white hover:text-zinc-200' : 'text-white hover:dark:text-gray-600 hover:text-zinc-800'} group transition duration-500 ease-in-out tracking-wide px-3 flex flex-col space-y-4  lg:uppercase py-4 font-semibold`"
                     >
                     <div class = "flex flex-row items-center space-x-4">
                       <span class="py-1">{{mainConfig.username}}</span>
@@ -294,7 +294,7 @@ function resetState() {
                             key: key2,
                           } in profileRoutes"
                           :key="key2"
-                          class="p-2 flex flex-nowrap text-zinc-800 hover:bg-zinc-100 hover:text-black"
+                          class="p-2 flex flex-nowrap text-zinc-800 hover:bg-zinc-100 hover:text-white"
                           @click="route2"
                           >{{ name2 }}</a
                         >
