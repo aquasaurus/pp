@@ -6,6 +6,7 @@ export const useModalConfig = defineStore("loginModals", {
       loginModalIsOpen: false,
       signupModalIsOpen: false,
       feedbackModalIsOpen: false,
+      reportModalIsOpen: false,
       loggedIn: false,
       username: "",
     };
@@ -27,11 +28,17 @@ export const useModalConfig = defineStore("loginModals", {
     openFeedback() {
       this.feedbackModalIsOpen = true;
     },
+    openReport() {
+      this.reportModalIsOpen = true;
+    },
     closeLogin() {
       this.loginModalIsOpen = false;
     },
     closeFeedback() {
       this.feedbackModalIsOpen = false;
+    },
+    closeReport() {
+      this.reportModalIsOpen = false;
     },
     closeSignup() {
       this.signupModalIsOpen = false;

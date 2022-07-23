@@ -2,13 +2,12 @@ import { useModalConfig } from "@/store/loginModal.ts";
 
 const mainConfig = useModalConfig();
 
-const router = useRouter();
+//const router = useRouter();
 
 export default [
   {
     name: "Home",
     route: () => {
-      router.push("/");
     },
     key: "home",
     tooltip: "Go Home",
@@ -17,10 +16,10 @@ export default [
   {
     name: "Report",
     route: () => {
-      router.push("/report");
+      mainConfig.openReport();
     },
     key: "report",
-    tooltip: "Add A Report",
+    tooltip: "Report",
     routeIcon: "crosscircle",
   },
   {

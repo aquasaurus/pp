@@ -23,7 +23,7 @@
                 <div class="px-auto flex items-center mx-auto stroke-white stroke-2">
                   <SVGWrapper :name="navItem.routeIcon" />
                 </div>
-                <div :class = "`absolute -left-24 max-w-[70rem] transition-all overflow-hidden duration-500 ease-in-out text-right lg:max-w-0 lg:group-hover:max-w-[70rem]`">
+                <div :class = "`absolute -left-28 mr-4 max-w-[70rem] flex justify-end transition-all overflow-hidden duration-500 ease-in-out text-right lg:max-w-0 lg:group-hover:max-w-[70rem]`">
                 <MiscTag>{{navItem.tooltip}}</MiscTag></div>
               </li>
             </a>
@@ -42,7 +42,7 @@
           @click="toggleBoth"
         >
           <svg
-            :class="`block h-8 w-8 stroke-white stroke-2  ${toggleNav ? 'rotate-45': 'rotate-0'}`"
+            :class="`block h-8 w-8 stroke-white stroke-2 ${toggleNav ? 'rotate-45': 'rotate-0'}`"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

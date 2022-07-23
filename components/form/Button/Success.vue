@@ -4,8 +4,8 @@
       p-4
       flex flex-row text-white
       items-center
-      rounded-md
-      bg-gray-700
+      rounded-md justify-center
+      bg-gray-700 text-center
       hover:bg-gray-600
       transition
       duration-500

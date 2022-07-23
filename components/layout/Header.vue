@@ -139,7 +139,7 @@ function resetState() {
           </div>
           <div
             :class="`overflow-y-auto  lg:overflow-y-visible text-md lg:text-base z-40 block h-full top-12 left-0 w-full bg-gray-700  lg:bg-transparent fixed  lg:static transform transition duration-500 ease-in-out  lg:translate-x-0 p-8  lg:p-0  lg:block ${
-              toggleNav ? 'translate-x-0' : '-translate-x-130  lg:ml-6'
+              toggleNav ? 'translate-x-0' : '-translate-x-200  lg:ml-6'
             }`"
           >
             <a to="/">

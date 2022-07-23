@@ -22,7 +22,7 @@
       </div>
 
       <div
-        :class="`fixed z-50 inset-0 w-full flex flex-col items-center justify-center ${openFeedback} pointer-events-none ${
+        :class="`fixed z-50 inset-0 w-full flex flex-col items-center justify-center pointer-events-none ${
           openFeedback ? 'visible' : 'invisible'
         }`"
       >
@@ -30,10 +30,20 @@
           <FormFeedback />
         </div>
       </div>
+
+      <div
+        :class="`fixed z-50 inset-0 w-full flex flex-col items-center justify-center pointer-events-none ${
+          openReport ? 'visible' : 'invisible'
+        }`"
+      >
+        <div class="pointer-events-auto">
+          <FormReport @okay="mainConfig.closeReport" />
+        </div>
+      </div>
     </NuxtLayout>
     <div
       :class="`inset-0 z-40 w-full fixed backdrop-blur-lg bg-black/30 ${
-        openSignup || openLogin || openFeedback ? 'block' : 'hidden'
+        openSignup || openLogin || openFeedback || openReport ? 'block' : 'hidden'
       }`"
       @click="closeAll"
     />
@@ -45,6 +55,7 @@ const mainConfig = useModalConfig();
 let openLogin = computed(() => mainConfig.loginModalIsOpen);
 let openSignup = computed(() => mainConfig.signupModalIsOpen);
 let openFeedback = computed(() => mainConfig.feedbackModalIsOpen);
+let openReport = computed(() => mainConfig.reportModalIsOpen)
 function hasNoAccount() {
   mainConfig.closeLogin();
   mainConfig.openSignup();
@@ -57,6 +68,7 @@ function closeAll() {
   mainConfig.closeSignup();
   mainConfig.closeLogin();
   mainConfig.closeFeedback();
+  mainConfig.closeReport();
 }
 
 </script>
