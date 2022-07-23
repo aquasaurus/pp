@@ -33,14 +33,7 @@ definePageMeta({
 
 const coordinates = ref({ x: 0, y: 0 });
 
-function calculateDistance(elem, mouseX, mouseY) {
-  return Math.floor(
-    Math.sqrt(
-      Math.pow(mouseX - (elem.x + elem.width / 2), 2) +
-        Math.pow(mouseY - (elem.top + elem.height / 2), 2)
-    )
-  );
-}
+
 
 function movedaro(e) {
   console.log(e);
