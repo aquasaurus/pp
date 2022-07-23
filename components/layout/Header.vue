@@ -124,7 +124,7 @@ function resetState() {
           class="flex-1 flex fixed lg:static items-center lg:items-stretch lg:justify-start"
         >
           <div class="flex-shrink-0 flex items-center">
-            <NuxtLink to="/">
+            <a to="/">
               <img
                 class="h-8 w-auto hidden lg:block dark:lg:hidden"
                 :src="`/temp.png`"
@@ -135,20 +135,20 @@ function resetState() {
                 :src="`/temp.png`"
                 alt="Placeholder"
               />
-            </NuxtLink>
+            </a>
           </div>
           <div
             :class="`overflow-y-auto  lg:overflow-y-visible text-md lg:text-base z-40 block h-full top-12 left-0 w-full bg-gray-700  lg:bg-transparent fixed  lg:static transform transition duration-500 ease-in-out  lg:translate-x-0 p-8  lg:p-0  lg:block ${
               toggleNav ? 'translate-x-0' : '-translate-x-130  lg:ml-6'
             }`"
           >
-            <NuxtLink to="/">
+            <a to="/">
               <img
                 class="h-8 w-auto block lg:hidden"
                 :src="`/temp.png`"
                 alt="Placeholder"
               />
-            </NuxtLink>
+            </a>
 
             <div
               class="flex flex-col lg:flex-row justify-between space-x-1 w-full"
@@ -163,9 +163,9 @@ function resetState() {
                     v-for="{ name, route, key, tag } in Navigation"
                     :key="key"
                   >
-                    <NuxtLink
+                    <a
                       v-if="typeof route === 'string' && route.startsWith('/')"
-                      :to="typeof route == 'string' ? route : '#'"
+                      :href="typeof route == 'string' ? route : '#'"
                       :class="
                         (title === key ? key !== 'home'
                           ? `text-gray-600 `
@@ -176,7 +176,7 @@ function resetState() {
                       "
                     >
                       <span class="py-1">{{ name }}</span>
-                    </NuxtLink>
+                    </a>
                     <a
                       v-else-if="Array.isArray(route)"
                       :href="'javascript:void(0)'"
@@ -213,19 +213,19 @@ function resetState() {
                                                                         ? 'vivible translate-y-9'
                                                                         : 'invisible'
                                                                     }
-                                                                     lg:top-10
+                                                                     lg:hrefp-10
                                                                     transform
                                                                     transition
                                                                     duration-300
                                                                     ease-in-out
                                             `"
                       >
-                        <NuxtLink
+                        <a
                           v-for="{ name2, route2, key2 } in route"
                           :key="key2"
                           class="p-2 flex flex-nowrap text-zinc-800 hover:bg-zinc-100 hover:text-white"
-                          :to="route2"
-                          >{{ name2 }}</NuxtLink
+                          :href="route2"
+                          >{{ name2 }}</a
                         >
                       </div>
                     </a>
@@ -280,7 +280,7 @@ function resetState() {
                                                                         ? 'max-h-[60rem] px-2 lg:py-2'
                                                                         : 'max-h-0'
                                                                     }
-                                                                    lg:top-10
+                                                                    lg:hrefp-10
                                                                     transform
                                                                     transition-all
                                                                     duration-300

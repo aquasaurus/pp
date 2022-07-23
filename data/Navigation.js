@@ -6,17 +6,17 @@ export default [
     },
     {
       name: `About Us`,
-      route: `/`,
+      route: `/#about`,
       key: `about`,
     },
     {
       name: `Events`,
-      route: `/`,
+      route: `/#events`,
       key: `events`,
     },
     {
       name: `Gallery`,
-      route: `/`,
+      route: `/#gallery`,
       key: `gallery`,
     },
     {

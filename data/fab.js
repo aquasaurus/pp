@@ -1,25 +1,35 @@
+import { useModalConfig } from "@/store/loginModal.ts";
+
+const mainConfig = useModalConfig();
+
+const router = useRouter();
+
 export default [
   {
     name: "Home",
-    route: "/",
+    route: () => {
+      router.push("/");
+    },
     key: "home",
     tooltip: "Go Home",
-    routeIcon: "🏠",
+    routeIcon: "home",
   },
-
   {
-    name: "Home",
-    route: "/",
-    key: "home2",
-    tooltip: "Go Home",
-    routeIcon: "🏠",
+    name: "Report",
+    route: () => {
+      router.push("/report");
+    },
+    key: "report",
+    tooltip: "Add A Report",
+    routeIcon: "crosscircle",
   },
-
   {
     name: "Feedback",
-    route: "/",
+    route: () => {
+      mainConfig.openFeedback();
+    },
     key: "feedback",
     tooltip: "Feedback",
-    routeIcon: "📝",
+    routeIcon: "edit",
   },
 ];

@@ -13,20 +13,20 @@
           "
         >
           <div v-for="navItem in nav" :key="navItem.key">
-            <NuxtLink
-              :to="navItem.route"
-              class="relative p-2 group flex items-center"
+            <a
+              class="relative p-2 group flex items-center cursor-pointer"
+              @click="navItem.route"
             >
               <li
                 class="rounded-full relative flex group items-center p-4 w-16 h-16 bg-gray-600"
               >
-                <div class="px-auto flex items-center mx-auto">
-                  {{ navItem.routeIcon }}
+                <div class="px-auto flex items-center mx-auto stroke-white stroke-2">
+                  <SVGWrapper :name="navItem.routeIcon" />
                 </div>
                 <div :class = "`absolute -left-24 max-w-[70rem] transition-all overflow-hidden duration-500 ease-in-out text-right lg:max-w-0 lg:group-hover:max-w-[70rem]`">
                 <MiscTag>{{navItem.tooltip}}</MiscTag></div>
               </li>
-            </NuxtLink>
+            </a>
           </div>
         </ul>
       </div>

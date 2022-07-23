@@ -25,7 +25,6 @@
   </div>
 </template>
 <script setup>
-import Down from '../SVG/Down.vue';
 const { images } = defineProps(["images"]);
 
 const current = ref(0);
@@ -43,7 +42,6 @@ let interval;
 onMounted(() => {
   interval = setInterval(() => {
     current.value === images.length - 2 ? (current.value = 0) : next();
-    console.log(current.value)
   }, 6000);
 });
 

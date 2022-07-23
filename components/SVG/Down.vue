@@ -5,7 +5,7 @@
     height="24"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="currentColor"
+    
     stroke-linecap="round"
     stroke-linejoin="round"
     class="feather feather-chevron-down"

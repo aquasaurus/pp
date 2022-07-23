@@ -30,7 +30,7 @@
       <slot />
     </main>
     <MiscFab :nav="fab"/>
-    <PreFooter />
+    <LayoutPreFooter />
   </div>
 </template>
 <style>
@@ -38,8 +38,6 @@
 </style>
 <script setup>
 //const nuxtApp = useNuxtApp()
-import fab from '~~/data/fab';
-import PreFooter from '~~/components/layout/PreFooter.vue';
 const route = useRoute()
 
 
