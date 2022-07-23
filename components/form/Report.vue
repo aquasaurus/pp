@@ -49,15 +49,14 @@
         />
       </div>
     </div>
-    <div
-      :class="`p-2 bg-rose-300 text-rose-700 break-words ${
-        isBad ? 'opacity-100' : 'opacity-0'
-      }`"
-    >
+    <MiscMessage :class="`${isBad ? 'opacity-100' : 'opacity-0'} transition duration-500 ease-in-out`" type="error">
       Please ensure that name, phone number and content are filled.
-    </div>
+    </MiscMessage>
+    <MiscMessage :class="`${isGood ? 'opacity-100' : 'opacity-0'} transition duration-500 ease-in-out`" type="success">
+      Your report has been submitted!
+    </MiscMessage>
     <div class="max-w-sm font-bold">
-      <FormButtonSuccess class="w-24" caption="Send" @click="createReport" />
+      <FormButtonSuccess class="w-24" caption="Send" @click="createReport" :disabled="isGood" />
     </div>
   </div>
 </template>
@@ -73,6 +72,8 @@ const data = ref({
 
 const isBad = ref(false);
 
+const isGood = ref(false)
+
 function setData(key, val) {
   data.value[key] = val;
 
@@ -81,21 +82,26 @@ function setData(key, val) {
 }
 
 async function createReport() {
-    if (!validateReport()) return;
+  if (!validateReport()) return;
 
   const result = await fetch("http://localhost:8000/reports/new", {
     method: "POST",
     headers: { contentType: "application/json" },
     body: JSON.stringify({
       report_name: data.value.name,
-      report_phone: data.value.phone,
+      report_phone: String(data.value.phone),
       report_email: data.value.email,
       report_content: data.value.content,
     }),
   });
 
   console.log(result);
-  emit("okay");
+  if (result.status === 200) {
+    
+    isGood.value = true;
+
+    setTimeout(() => {isGood.value = false; emit("okay")}, 3000);
+  }
 }
 
 function validateReport() {

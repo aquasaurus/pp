@@ -47,6 +47,7 @@
       }`"
       @click="closeAll"
     />
+    <div id = "toastContainer"></div>
   </div>
 </template>
 <script setup>

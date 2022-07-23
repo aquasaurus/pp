@@ -1,0 +1,3 @@
+<template>
+<NuxtLoadingIndicator />
+</template>
