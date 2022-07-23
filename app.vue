@@ -1,4 +1,3 @@
-
 <template>
   <div :class="``">
     <NuxtLayout>
@@ -21,10 +20,20 @@
           <AccountSignup @hasAccount="hasAccount" />
         </div>
       </div>
+
+      <div
+        :class="`fixed z-50 inset-0 w-full flex flex-col items-center justify-center ${openFeedback} pointer-events-none ${
+          openFeedback ? 'visible' : 'invisible'
+        }`"
+      >
+        <div class="pointer-events-auto">
+          <FormFeedback />
+        </div>
+      </div>
     </NuxtLayout>
     <div
       :class="`inset-0 z-40 w-full fixed backdrop-blur-lg bg-black/30 ${
-        openSignup || openLogin ? 'block' : 'hidden'
+        openSignup || openLogin || openFeedback ? 'block' : 'hidden'
       }`"
       @click="closeAll"
     />
@@ -35,6 +44,7 @@ import { useModalConfig } from "@/store/loginModal.ts";
 const mainConfig = useModalConfig();
 let openLogin = computed(() => mainConfig.loginModalIsOpen);
 let openSignup = computed(() => mainConfig.signupModalIsOpen);
+let openFeedback = computed(() => mainConfig.feedbackModalIsOpen);
 function hasNoAccount() {
   mainConfig.closeLogin();
   mainConfig.openSignup();
@@ -46,5 +56,7 @@ function hasAccount() {
 function closeAll() {
   mainConfig.closeSignup();
   mainConfig.closeLogin();
+  mainConfig.closeFeedback();
 }
+
 </script>
