@@ -81,6 +81,8 @@ function setData(key, val) {
 }
 
 async function createReport() {
+    if (!validateReport()) return;
+
   const result = await fetch("http://localhost:8000/reports/new", {
     method: "POST",
     headers: { contentType: "application/json" },
@@ -92,8 +94,7 @@ async function createReport() {
     }),
   });
 
-  if (!validateReport()) return;
-  console.log(data);
+  console.log(result);
   emit("okay");
 }
 
