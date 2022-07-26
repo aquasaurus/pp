@@ -211,8 +211,8 @@ const typer = [
   ["WE HELP", "PEOPLE"],
 ];
 const current = ref(["", "", 0]);
-onMounted(() => {
-  setInterval(() => {
+
+const changeHero = () => {
     if (current.value[2] === typer.length - 1) {
       current.value[2] = 0;
       current.value[0] = "";
@@ -252,6 +252,10 @@ onMounted(() => {
         );
       }
     }
-  }, 4000);
+  }
+
+onMounted(() => {
+  changeHero();
+  setInterval(changeHero, 4000);
 });
 </script>

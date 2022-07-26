@@ -82,7 +82,7 @@ function resetState() {
                         ? 'text-sky-500 '
                         : 'text-white border-transparent ') +
                       (Array.isArray(route) ? 'group ' : '') +
-                      'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row items-center space-x-4 justify-start md:uppercase py-4  font-bold hover:text-sky-500 block'
+                      'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row items-center space-x-4 justify-start md:uppercase py-4  font-bold hover:text-sky-500'
                     "
                   >
                     <SVGWrapper :name="icon" />
@@ -107,11 +107,11 @@ function resetState() {
                       :class="
                         (title === key ? 'text-sky-500 ' : 'text-white ') +
                         (Array.isArray(route) ? 'group ' : '') +
-                        'relative  transition duration-500 ease-in-out tracking-wide px-3 flex flex-col space-y-4 md:uppercase py-4  font-bold hover:text-sky-500 block'
+                        'relative  transition duration-500 ease-in-out tracking-wide px-3 flex flex-col space-y-4 md:uppercase py-4  font-bold hover:text-sky-500'
                       "
                     >
                       <div class="flex flex-row space-x-4 items-center w-full">
-                        <SVGWrapper :name="icon" />
+                        <SVGWrapper class = "stroke-2 stroke-white" :name="icon" />
                         <div class="flex flex-row justify-between w-full">
                           <span
                             class="
@@ -178,7 +178,7 @@ function resetState() {
                     :class="
                       (title === key ? 'text-sky-500 ' : 'dark:text-white') +
                       (Array.isArray(route) ? 'group ' : '') +
-                      'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4 md:uppercase py-4  font-bold hover:text-sky-500 hover:stroke-sky-500 block'
+                      'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4 md:uppercase py-4  font-bold hover:text-sky-500 hover:stroke-sky-500'
                     "
                   >
                     <SVGWrapper :name="icon" />

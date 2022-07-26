@@ -55,7 +55,7 @@ function resetState() {
   >
     <a
       href="javascript:void(0)"
-      :class="`fixed top-4 left-6 z-75 block w-12 h-12 flex justify-center items-center stroke-white text-white stroke-2 transform transition duration-500 ease-in-out ${
+      :class="`fixed top-2 left-4 z-75 w-12 h-12 flex justify-center items-center stroke-white text-white stroke-2 transform transition duration-500 ease-in-out ${
         toggleNav ? 'rotate-90' : '-rotate-90'
       }`"
       @click="toggleBoth"
@@ -64,57 +64,6 @@ function resetState() {
     </a>
     <div class="max-w-9xl mx-auto px-2 md:px-6 lg:px-8 md:mt-4">
       <div class="relative flex items-center justify-between h-16">
-        <div
-          class="relative inset-y-0 left-0 flex items-center"
-          @click="(x) => toggleOn()"
-        >
-          <a
-            href="javascript:void(0)"
-            :class="`
-              inline-flex
-              items-center
-              ${toggleNav ? 'hidden' : 'block'}
-              justify-center
-              p-2
-              rounded-md
-              text-white 
-              hover:text-gold-700
-              stroke-white md:hidden
-            `"
-          >
-            <span class="sr-only">Open menu</span>
-
-            <svg
-              class="block h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-
-            <svg
-              class="hidden h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </a>
-        </div>
         <div
           class="
             flex-1 flex flex-col
@@ -125,8 +74,8 @@ function resetState() {
           "
         >
           <div
-            :class="`overflow-y-scroll left-0 top-0 z-30 block h-full mt-12 w-72 top-0 left-0 bg-zinc-900 dark:bg-gray-900 fixed transform transition duration-500 ease-in-out p-8 ${
-              toggleNav ? 'translate-x-0' : '-translate-x-110'
+            :class="`overflow-y-scroll left-0 top-0 z-30 block h-full mt-12 w-full bg-zinc-900 dark:bg-gray-900 fixed transform transition duration-500 ease-in-out p-8 ${
+              toggleNav ? 'translate-x-0' : '-translate-x-200'
             }`"
           >
             <div class="flex flex-col justify-between space-y-1 w-full">
@@ -140,7 +89,7 @@ function resetState() {
                         ? 'text-sky-500 '
                         : 'text-white border-transparent ') +
                       (Array.isArray(route) ? 'group ' : '') +
-                      'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4 md:uppercase py-4 text-xs md:text-base font-bold hover:text-sky-500 block'
+                      'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4 md:uppercase py-4 text-sm md:text-base font-bold hover:text-sky-500'
                     "
                   >
                     <span class="py-1">{{ name }}</span>
@@ -152,7 +101,7 @@ function resetState() {
                       :class="
                         (title === key ? 'text-sky-500 ' : 'text-white ') +
                         (Array.isArray(route) ? 'group ' : '') +
-                        'relative  transition duration-500 ease-in-out tracking-wide px-3 flex flex-col space-y-4 md:uppercase py-4 text-xs md:text-base font-bold hover:text-sky-500 block'
+                        'relative  transition duration-500 ease-in-out tracking-wide px-3 flex flex-col space-y-4 md:uppercase py-4 text-sm md:text-base font-bold hover:text-sky-500'
                       "
                     >
                       <div class="flex flex-row space-x-4 items-center">
@@ -162,7 +111,7 @@ function resetState() {
                             toggled[key] ? 'rotate-180' : 'rotate-0'
                           }`"
                         >
-                          <SVGDown />
+                          <SVGDown class = "stroke-white" />
                         </span>
                       </div>
                     </a>
@@ -173,7 +122,7 @@ function resetState() {
                         overflow-y-scroll
                         text-xs
                         flex-col
-                        ${toggled[key] ? 'py-2 h-72' : 'py-0 h-0'}
+                        ${toggled[key] ? 'py-2 max-h-[72rem]' : 'py-0 max-h-0'}
                         transition-all
                         duration-300
                         ease-in-out
@@ -193,7 +142,7 @@ function resetState() {
                           transition
                           duration-500
                           ease-in-out
-                          block ml-2 md:uppercase py-4 text-xs md:text-base
+                          block ml-2 md:uppercase py-4 text-sm md:text-base
                           hover:bg-zinc-800 hover:text-sky-500`"
                         :to="anotherRoute.route"
                         >{{ anotherRoute.name }}</NuxtLink
@@ -207,7 +156,7 @@ function resetState() {
                     :class="
                       (title === key ? 'text-sky-500 ' : 'dark:text-white') +
                       (Array.isArray(route) ? 'group ' : '') +
-                      'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4 md:uppercase py-4 text-xs md:text-base font-bold hover:light:text-sky-500 hover:text-blue-800 block'
+                      'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4 md:uppercase py-4 text-sm md:text-base font-bold hover:light:text-sky-500 hover:text-blue-800 block'
                     "
                   >
                     <span class="py-1">{{ name }}</span>

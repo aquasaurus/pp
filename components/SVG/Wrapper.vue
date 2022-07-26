@@ -1,5 +1,5 @@
 <template>
-  <div class = "w-full">
+  <div class = "">
     <SVGAward v-if="name.toLowerCase() == 'award'" :size="size" />
     <SVGBar v-if="name.toLowerCase() == 'bar'" :size="size" />
     <SVGBars v-if="name.toLowerCase() == 'bars'" :size="size" />

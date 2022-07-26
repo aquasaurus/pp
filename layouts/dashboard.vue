@@ -41,7 +41,6 @@
     >
       <slot />
     </main>
-    <LayoutFooter />
   </div>
 </template>
 <style>
