@@ -53,7 +53,7 @@ const toggleNav = computed(() => openItems.navOpen);
 const nuxtApp = useNuxtApp();
 const route = useRoute();
 useHead({
-  title: route.meta.title || "Billing Billy",
+  title: route.meta.title || "Volunteer Dashboard",
   description: route.meta.description,
 });
 </script>
