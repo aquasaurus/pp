@@ -82,7 +82,7 @@
     </div>
     <div class="bg-gray-400 w-full py-12 mx-auto space-y-8">
       <div
-        class="max-w-7xl mx-auto flex flex-col space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row items-stretch justify-between"
+        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-between w-full"
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-delay="100"
@@ -91,7 +91,7 @@
         <div
           v-for="item in events"
           :key="item.title"
-          class="flex flex-col space-y-4 items-center bg-white lg:w-72 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          class="flex flex-col mx-auto space-y-4 items-center bg-white lg:w-72 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
         >
           <div class="flex-shrink-0">
             <img
@@ -120,14 +120,8 @@
         Gallery
       </div>
 
-      <MiscCarousel
-        :images="[
-          '/testpol.webp',
-          '/testpol.webp',
-          '/testpol.webp',
-          '/testpol.webp',
-          '/testpol.webp',
-        ]"
+      <MiscTileCarousel
+        :images="eventList"
       />
     </div>
     <div
@@ -180,11 +174,27 @@
 }
 </style>
 <script setup>
+import eventList from "@/data/Events.js"
 import { useModalConfig } from "@/store/loginModal.ts";
 const mainConfig = useModalConfig();
 
 const events = [
   {
+    title: "Hear You Out",
+    description: "Respond to emergencies.",
+    image: "/testpol.webp",
+  },
+  {
+    title: "Support",
+    description: " We work by your side ",
+    image: "/testpol.webp",
+  },
+  {
+    title: "Protect",
+    description: "Resolve conflicts and crisis.",
+    image: "/testpol.webp",
+  },
+    {
     title: "Hear You Out",
     description: "Respond to emergencies.",
     image: "/testpol.webp",
