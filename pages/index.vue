@@ -14,10 +14,10 @@
         </div>
 
         <button
-          class="bg-blue-500 rounded-full px-4 py-1 w-48 transition duration-500 ease-in-out transform hover:-translate-y-1"
+          class="bg-blue-500 rounded-full text-base px-4 py-1 w-72 transition duration-500 ease-in-out transform hover:-translate-y-1"
           @click="mainConfig.openSignup"
         >
-          JOIN US
+          JOIN AS VOLUNTEER
         </button>
       </div>
     </div>
