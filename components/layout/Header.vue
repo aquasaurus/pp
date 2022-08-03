@@ -1,12 +1,12 @@
 <script setup>
 import Navigation from "@/data/Navigation";
 import * as Constants from "@/data/Constants";
-import {useScroll} from "@vueuse/core"
+import { useScroll } from "@vueuse/core";
 
 import { useModalConfig } from "@/store/loginModal.ts";
 const { title } = defineProps(["title"]);
 
-const mainConfig = useModalConfig(); 
+const mainConfig = useModalConfig();
 
 const _toggled = Navigation.map((x) => x.key);
 
@@ -21,10 +21,10 @@ function getToggled() {
   return a;
 }
 
-const loggedIn = ref(true)
+const loggedIn = ref(true);
 
 function login() {
-    loggedIn.value = true;
+  loggedIn.value = true;
 }
 
 const toggled = ref(getToggled());
@@ -121,7 +121,13 @@ function resetState() {
           </button>
         </div>
         <div
-          class="flex-1 flex fixed lg:static items-center lg:items-stretch lg:justify-start"
+          class="
+            flex-1 flex
+            fixed
+            lg:static
+            items-center
+            lg:items-stretch lg:justify-start
+          "
         >
           <div class="flex-shrink-0 flex items-center">
             <a to="/">
@@ -154,10 +160,21 @@ function resetState() {
               class="flex flex-col lg:flex-row justify-between space-x-1 w-full"
             >
               <div
-                class="flex lg:space-x-4 flex-col lg:flex-row lg:justify-between lg:w-full lg:pt-0 pt-10"
+                class="
+                  flex
+                  lg:space-x-4
+                  flex-col
+                  lg:flex-row lg:justify-between lg:w-full lg:pt-0
+                  pt-10
+                "
               >
                 <div
-                  class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 lg:items-center"
+                  class="
+                    flex flex-col
+                    lg:flex-row
+                    space-y-4
+                    lg:space-y-0 lg:space-x-4 lg:items-center
+                  "
                 >
                   <div
                     v-for="{ name, route, key, tag } in Navigation"
@@ -167,10 +184,13 @@ function resetState() {
                       v-if="typeof route === 'string' && route.startsWith('/')"
                       :href="typeof route == 'string' ? route : '#'"
                       :class="
-                        (title === key ? key !== 'home'
-                          ? `text-gray-600 `
-                          : 'text-white '
-                          : key !== 'home' ? 'text-white border-transparent ' : 'text-white border-transparent ') +
+                        (title === key
+                          ? key !== 'home'
+                            ? `text-gray-600 `
+                            : 'text-white '
+                          : key !== 'home'
+                          ? 'text-white border-transparent '
+                          : 'text-white border-transparent ') +
                         (Array.isArray(route) ? 'group ' : '') +
                         'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4  lg:uppercase py-4 font-semibold hover:dark:text-gray-600 hover:text-zinc-800'
                       "
@@ -182,50 +202,56 @@ function resetState() {
                       :href="'javascript:void(0)'"
                       @click="(x) => setState(key)"
                       :class="
-                        (title === key ? key !== 'home'
-                          ? `text-gray-600 `
-                          : 'text-white '
-                          : key !== 'home' ? 'text-white border-transparent ' : 'text-white border-transparent ') +                        (Array.isArray(route) ? 'group ' : '') +
-                        'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4  lg:uppercase py-4 font-semibold hover:dark:text-gray-600 hover:text-zinc-800'
+                        (title === key
+                          ? key !== 'home'
+                            ? `text-gray-600 `
+                            : 'text-white '
+                          : key !== 'home'
+                          ? 'text-white border-transparent '
+                          : 'text-white border-transparent ') +
+                        (Array.isArray(route) ? 'group ' : '') +
+                        'transition duration-500 ease-in-out tracking-wide px-3 flex flex-col space-y-4  lg:uppercase py-4 font-semibold hover:dark:text-gray-600 hover:text-zinc-800'
                       "
                     >
-                      <span class="py-1">{{ name }}</span>
-                      <span>
-                        <SVGDown />
-                      </span>
-
+                      <div class="flex flex-row items-center justify-between">
+                        <span class="py-1">{{ name }}</span>
+                        <span>
+                          <SVGDown class = "stroke-white stroke-2" />
+                        </span>
+                      </div>
                       <div
                         :class="`
-                                                                    absolute
+                                                                    lg:absolute top-10
                                                                     flex
-                                                                    bg-black
-                                                                    border-t
                                                                     w-48
-                                                                    border-zinc-400
-                                                                    shadow-md
+                                                                    bg-gray-700
+                                                                    lg:shadow-md
                                                                     text-xs
-                                                                    p-2
                                                                     flex-col
                                                                     ${
                                                                       toggled[
                                                                         key
                                                                       ]
-                                                                        ? 'vivible translate-y-9'
-                                                                        : 'invisible'
+                                                                        ? 'py-2 max-h-[30rem]'
+                                                                        : 'overflow-y-hidden max-h-0'
                                                                     }
-                                                                     lg:hrefp-10
                                                                     transform
-                                                                    transition
+                                                                    transition-all
                                                                     duration-300
                                                                     ease-in-out
                                             `"
                       >
                         <a
-                          v-for="{ name2, route2, key2 } in route"
-                          :key="key2"
-                          class="p-2 flex flex-nowrap text-zinc-800 hover:bg-zinc-100 hover:text-white"
-                          :href="route2"
-                          >{{ name2 }}</a
+                          v-for="route2 in route"
+                          :key="route2.key"
+                          class="
+                            p-2
+                            flex flex-nowrap
+                            text-gray-200
+                            hover:bg-zinc-100 hover:text-white
+                          "
+                          :href="route2.route"
+                          >{{ route2.name }}</a
                         >
                       </div>
                     </a>
@@ -234,10 +260,13 @@ function resetState() {
                       :href="typeof route == 'string' ? route : '#'"
                       target="_blank"
                       :class="
-                        (title === key ? key !== 'home'
-                          ? `text-gray-600 `
-                          : 'text-white '
-                          : key !== 'home' ? 'text-white border-transparent ' : 'text-white border-transparent ') +
+                        (title === key
+                          ? key !== 'home'
+                            ? `text-gray-600 `
+                            : 'text-white '
+                          : key !== 'home'
+                          ? 'text-white border-transparent '
+                          : 'text-white border-transparent ') +
                         (Array.isArray(route) ? 'group ' : '') +
                         'transition duration-500 ease-in-out tracking-wide px-3 flex flex-row space-x-4  lg:uppercase py-4 font-semibold hover:dark:text-gray-600 hover:text-zinc-800'
                       "

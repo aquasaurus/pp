@@ -1,39 +1,73 @@
 <template>
-  <div class="flex flex-col space-y-8">
+  <div class="flex flex-col space-y-40">
     <div class="bg-gray-800 somebg relative -top-20 text-white min-h-screen">
       <div
-        class="flex flex-col space-y-8 px-4 py-12 mt-24 lg:mt-72 max-w-8xl mx-auto justify-between h-[22rem]"
+        class="
+          flex flex-col
+          space-y-8
+          px-4
+          py-12
+          mt-24
+          lg:mt-72
+          max-w-8xl
+          mx-auto
+          justify-between
+          h-[22rem]
+        "
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-delay="100"
         data-aos-duration="260"
       >
         <div class="flex flex-col space-y-4">
-          
           <span class="text-4xl lg:text-7xl t1">{{ current[0] }}</span>
           <span class="text-4xl lg:text-7xl t2">{{ current[1] }}</span>
         </div>
 
-        <b-row class="mt-3 text-left mb-3">
-          <b-col>
-        <button
-          class="bg-blue-500 rounded-full text-lg px-4 py-1 w-72 transition duration-500 ease-in-out transform hover:-translate-y-1"
-          @click="mainConfig.openSignup"
+        <div
+          class="
+            mt-3
+            flex flex-col
+            lg:flex-row
+            space-y-4
+            lg:space-y-0 lg:space-x-4
+          "
         >
-          JOIN AS VOLUNTEER
-        </button> </b-col>
-        
-        <b-col>
-        <button
-          class="bg-orange-600 rounded-full text-lg px-4 py-1 w-72 transition duration-500 ease-in-out transform hover:-translate-y-1"
-          @click="mainConfig.openReport"
-        >
-          RAISE A COMPLAINT
-        </button>
-         </b-col>
-            </b-row>
-      
-
+          <button
+            class="
+              bg-blue-500
+              rounded-xl
+              text-lg
+              p-2
+              w-72
+              transition
+              duration-500
+              ease-in-out
+              transform
+              hover:-translate-y-1
+            "
+            @click="mainConfig.openSignup"
+          >
+            JOIN AS VOLUNTEER
+          </button>
+          <button
+            class="
+              bg-orange-600
+              rounded-xl
+              text-lg
+              p-2
+              w-72
+              transition
+              duration-500
+              ease-in-out
+              transform
+              hover:-translate-y-1
+            "
+            @click="mainConfig.openReport"
+          >
+            RAISE A COMPLAINT
+          </button>
+        </div>
       </div>
     </div>
     <div
@@ -57,7 +91,17 @@
       </div>
     </div>
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-12 py-12 text-white max-w-7xl mx-auto p-2 lg:p-0"
+      class="
+        grid grid-cols-1
+        lg:grid-cols-2
+        gap-12
+        py-12
+        text-white
+        max-w-7xl
+        mx-auto
+        p-2
+        lg:p-0
+      "
       id="vision"
       data-aos="fade-up"
       data-aos-easing="linear"
@@ -65,7 +109,21 @@
       data-aos-duration="260"
     >
       <div
-        class="bg-gray-600 rounded-xl lg:text-right text-center p-2 lg:p-8 flex flex-col space-y-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+        class="
+          bg-gray-600
+          rounded-xl
+          lg:text-right
+          text-center
+          p-2
+          lg:p-8
+          flex flex-col
+          space-y-8
+          transition
+          duration-500
+          ease-in-out
+          transform
+          hover:-translate-y-1 hover:scale-110
+        "
       >
         <span class="text-3xl">Vision</span>
         <span class="text-justify"
@@ -80,7 +138,21 @@
         >
       </div>
       <div
-        class="bg-gray-500 rounded-xl lg:text-left text:center p-2 lg:p-8 flex flex-col space-y-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+        class="
+          bg-gray-500
+          rounded-xl
+          lg:text-left
+          text:center
+          p-2
+          lg:p-8
+          flex flex-col
+          space-y-8
+          transition
+          duration-500
+          ease-in-out
+          transform
+          hover:-translate-y-1 hover:scale-110
+        "
       >
         <span class="text-3xl">Mission</span>
         <span class="text-justify"
@@ -95,16 +167,13 @@
         >
       </div>
     </div>
-    
-
-
-
-    <div 
-      id="volunteer"
-      class="flex flex-col space-y-4 text-base px-12 max-w-7xl mx-auto py-12">
-
-      <span class="text-3xl">Volunteers</span>
-        <span class="text-justify"
+    <div class="bg-gray-700 text-white">
+      <div
+        id="volunteer"
+        class="flex flex-col space-y-4 text-base px-12 max-w-7xl mx-auto py-12"
+      >
+        <div class="text-4xl mx-auto text-center uppercase">Volunteers</div>
+        <span class="text-justify py-12"
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
           justo dignissim, dignissim ex aliquam, scelerisque turpis. Donec
           placerat, nulla nec pretium cursus, ligula nisi mollis augue, eget
@@ -114,51 +183,93 @@
           ultrices ac lorem auctor iaculis. Etiam ut sem lobortis, mattis lectus
           a, ultricies risus.</span
         >
-
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <CardList
+            class="mx-auto"
+            title="Eligibility"
+            :description="[
+              'Fraud',
+              'Cyber Crime',
+              'Safety Concerns',
+              'Awareness',
+              'Corruption',
+            ]"
+          />
+          <CardList
+            class="mx-auto"
+            title="Perks"
+            :description="[
+              'Fraud',
+              'Cyber Crime',
+              'Safety Concerns',
+              'Awareness',
+              'Corruption',
+            ]"
+          />
+        </div>
+        <div class="py-4">
+          <CardList
+            title="How To Volunteer?"
+            :description="[
+              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+          justo dignissim, dignissim ex aliquam, scelerisque turpis.`,
+              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+          justo dignissim, dignissim ex aliquam, scelerisque turpis.`,
+              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+          justo dignissim, dignissim ex aliquam, scelerisque turpis.`,
+              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+          justo dignissim, dignissim ex aliquam, scelerisque turpis.`,
+              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+          justo dignissim, dignissim ex aliquam, scelerisque turpis.`,
+            ]"
+          />
+        </div>
       </div>
-
-
-
-
-
-    <div class="w-full py-12 mx-auto space-y-8">
-      <div 
-      class="flex flex-col space-y-4 max-w-7xl mx-auto py-12 px-12 items-left">
-      <span class="text-4xl">Leaders</span></div>
+    </div>
+    <div class="w-full py-2 mx-auto space-y-8">
+      <div
+        class="flex flex-col space-y-4 max-w-7xl mx-auto py-12 px-12 items-left"
+      >
+        <div class="text-4xl mx-auto text-center text-black uppercase">
+          Leaders
+        </div>
+      </div>
       <div
         id="leaders"
-        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-between w-full"
+        class="
+          max-w-7xl
+          mx-auto
+          grid grid-cols-1
+          gap-8
+          items-center
+          justify-between
+          w-full
+        "
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-delay="100"
         data-aos-duration="260"
       >
-      
-      
-
-        <div
-          v-for="item in events"
+        <CardPerson
+          v-for="(item, i) in events"
+          :news="item"
+          :left="i % 2 === 0 ? true : false"
           :key="item.title"
-          class="flex flex-col mx-auto space-y-4 items-center bg-white lg:w-72 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-        >
-          <div class="flex-shrink-0">
-            <img
-              :src="item.image"
-              :alt="item.title"
-              class="h-full lg:h-48 w-full lg:w-72 object-cover"
-            />
-          </div>
-          <div class="text-base p-2 text-center">
-            <div class="font-semibold text-2xl">{{ item.title }}</div>
-            <div class="text-gray-600 font-light">{{ item.description }}</div>
-          </div>
-        </div>
+          class="transition duration-500 w-full ease-in-out transform"
+        />
       </div>
     </div>
 
     <div
       id="gallery"
-      class="max-w-7xl mx-auto flex flex-col space-y-4 items-stretch justify-between"
+      class="
+        max-w-7xl
+        mx-auto
+        flex flex-col
+        space-y-4
+        items-stretch
+        justify-between
+      "
       data-aos="fade-up"
       data-aos-easing="linear"
       data-aos-delay="100"
@@ -168,9 +279,7 @@
         Gallery
       </div>
 
-      <MiscTileCarousel
-        :images="eventList"
-      />
+      <MiscTileCarousel :images="eventList" />
     </div>
     <div
       id="complaint"
@@ -180,11 +289,20 @@
       data-aos-duration="260"
       class="max-w-7xl w-full mx-auto flex flex-col space-y-4 justify-between"
     >
-     <div class="text-4xl mx-auto text-center text-black uppercase">
+      <div class="text-4xl mx-auto text-center text-black uppercase">
         Complaint
       </div>
       <div
-        class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 justify-start max-w-7xl py-12 items-center"
+        class="
+          flex flex-col
+          lg:flex-row
+          space-y-4
+          lg:space-y-0 lg:space-x-4
+          justify-start
+          max-w-7xl
+          py-12
+          items-center
+        "
       >
         <div class="">
           <img src="/testpol.webp" class="object-cover w-full lg:w-[30rem]" />
@@ -203,15 +321,33 @@
         </div>
       </div>
     </div>
-        <div
+    <div
       id="report-btn"
       class="max-w-7xl w-full mx-auto flex flex-col space-y-4 justify-between"
     >
-    <MiscMessage type="gray">Click the button below in order to file a complaint. Volunteers will be notified and will act accordingly.</MiscMessage>
-    <button class = "rounded-2xl bg-gray-600 text-white p-4 transition duration-500 ease-in-out transform hover:-translate-y-1" @click="mainConfig.openReport">File a Complaint</button>
+      <MiscMessage type="gray"
+        >Click the button below in order to file a complaint. Volunteers will be
+        notified and will act accordingly.</MiscMessage
+      >
+      <button
+        class="
+          rounded-2xl
+          bg-gray-600
+          text-white
+          p-4
+          transition
+          duration-500
+          ease-in-out
+          transform
+          hover:-translate-y-1
+        "
+        @click="mainConfig.openReport"
+      >
+        File a Complaint
+      </button>
     </div>
 
-    <div class="mt-24" />
+    <div class="h-[1rem]" />
   </div>
 </template>
 
@@ -222,39 +358,50 @@
 }
 </style>
 <script setup>
-import eventList from "@/data/Events.js"
+import eventList from "@/data/Events.js";
 import { useModalConfig } from "@/store/loginModal.ts";
 const mainConfig = useModalConfig();
 
 const events = [
   {
     title: "Hear You Out",
-    description: "Respond to emergencies.",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+        justo dignissim, dignissim ex aliquam, scelerisque turpis. Donec
+        placerat, nulla nec pretium cursus, ligula nisi mollis augue, eget
+        ornare ipsum lacus tincidunt justo. Curabitur quis nunc lacinia,
+        venenatis magna vel, sagittis erat. Proin convallis gravida suscipit.
+        Sed quis nisl vel nunc pellentesque dapibus eget in lectus. Phasellus
+        ultrices ac lorem auctor iaculis. Etiam ut sem lobortis, mattis lectus
+        a, ultricies risus.`,
+    subtitle: "Lucky Man",
+
     image: "/testpol.webp",
   },
   {
     title: "Support",
-    description: " We work by your side ",
+    description: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+        justo dignissim, dignissim ex aliquam, scelerisque turpis. Donec
+        placerat, nulla nec pretium cursus, ligula nisi mollis augue, eget
+        ornare ipsum lacus tincidunt justo. Curabitur quis nunc lacinia,
+        venenatis magna vel, sagittis erat. Proin convallis gravida suscipit.
+        Sed quis nisl vel nunc pellentesque dapibus eget in lectus. Phasellus
+        ultrices ac lorem auctor iaculis. Etiam ut sem lobortis, mattis lectus
+        a, ultricies risus. `,
+    subtitle: "Spiderman",
+
     image: "/testpol.webp",
   },
   {
     title: "Protect",
-    description: "Resolve conflicts and crisis.",
-    image: "/testpol.webp",
-  },
-    {
-    title: "Hear You Out",
-    description: "Respond to emergencies.",
-    image: "/testpol.webp",
-  },
-  {
-    title: "Support",
-    description: " We work by your side ",
-    image: "/testpol.webp",
-  },
-  {
-    title: "Protect",
-    description: "Resolve conflicts and crisis.",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+        justo dignissim, dignissim ex aliquam, scelerisque turpis. Donec
+        placerat, nulla nec pretium cursus, ligula nisi mollis augue, eget
+        ornare ipsum lacus tincidunt justo. Curabitur quis nunc lacinia,
+        venenatis magna vel, sagittis erat. Proin convallis gravida suscipit.
+        Sed quis nisl vel nunc pellentesque dapibus eget in lectus. Phasellus
+        ultrices ac lorem auctor iaculis. Etiam ut sem lobortis, mattis lectus
+        a, ultricies risus.`,
+    subtitle: "Superman",
     image: "/testpol.webp",
   },
 ];
@@ -271,46 +418,46 @@ const typer = [
 const current = ref(["", "", 0]);
 
 const changeHero = () => {
-    if (current.value[2] === typer.length - 1) {
-      current.value[2] = 0;
-      current.value[0] = "";
-      current.value[1] = "";
-      let n;
-      for (let i = 0; i < typer[current.value[2]][0].length; ++i) {
-        setTimeout(
-          () => (current.value[0] += typer[current.value[2]][0][i]),
-          50 * i
-        );
-        n = i;
-      }
-      console.log(current.value);
-      for (let j = 0; j < typer[current.value[2]][1].length; ++j) {
-        setTimeout(
-          () => (current.value[1] += typer[current.value[2]][1][j]),
-          50 * (n + j)
-        );
-      }
-    } else {
-      current.value[2] += 1;
-      current.value[0] = "";
-      current.value[1] = "";
-      let n;
-      for (let i = 0; i < typer[current.value[2]][0].length; ++i) {
-        setTimeout(
-          () => (current.value[0] += typer[current.value[2]][0][i]),
-          50 * i
-        );
-        n = i;
-      }
-      console.log(current.value);
-      for (let j = 0; j < typer[current.value[2]][1].length; ++j) {
-        setTimeout(
-          () => (current.value[1] += typer[current.value[2]][1][j]),
-          50 * (n + j)
-        );
-      }
+  if (current.value[2] === typer.length - 1) {
+    current.value[2] = 0;
+    current.value[0] = "";
+    current.value[1] = "";
+    let n;
+    for (let i = 0; i < typer[current.value[2]][0].length; ++i) {
+      setTimeout(
+        () => (current.value[0] += typer[current.value[2]][0][i]),
+        50 * i
+      );
+      n = i;
+    }
+    console.log(current.value);
+    for (let j = 0; j < typer[current.value[2]][1].length; ++j) {
+      setTimeout(
+        () => (current.value[1] += typer[current.value[2]][1][j]),
+        50 * (n + j)
+      );
+    }
+  } else {
+    current.value[2] += 1;
+    current.value[0] = "";
+    current.value[1] = "";
+    let n;
+    for (let i = 0; i < typer[current.value[2]][0].length; ++i) {
+      setTimeout(
+        () => (current.value[0] += typer[current.value[2]][0][i]),
+        50 * i
+      );
+      n = i;
+    }
+    console.log(current.value);
+    for (let j = 0; j < typer[current.value[2]][1].length; ++j) {
+      setTimeout(
+        () => (current.value[1] += typer[current.value[2]][1][j]),
+        50 * (n + j)
+      );
     }
   }
+};
 
 onMounted(() => {
   changeHero();

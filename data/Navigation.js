@@ -1,34 +1,38 @@
 export default [
-    {
+  {
+    name: `Home`,
+    route: `/`,
+    key: `home`,
+  },
+  {
+    name: `About Us`,
+    route: [{
       name: `Home`,
       route: `/`,
-      key: `home`,
-    },
-    {
-      name: `About Us`,
-      route: `/#about`,
-      key: `about`,
-    },
+      key: `home1`,
+    }],
+    key: `about`,
+  },
 
-    {
-      name: `Volunteers`,
-      route: `/#volunteer`,
-      key: `volunteer`,
-    },
+  {
+    name: `Volunteers`,
+    route: `/#volunteer`,
+    key: `volunteer`,
+  },
 
-    {
-      name: `Events`,
-      route: `/#leaders`,
-      key: `events`,
-    },
-    {
-      name: `Gallery`,
-      route: `/#gallery`,
-      key: `gallery`,
-    },
-    {
-      name: `Complaint`,
-      route: `/#complaint`,
-      key: `complaint`,
-    },
-]
+  {
+    name: `Leaders`,
+    route: `/#leaders`,
+    key: `leaders`,
+  },
+  {
+    name: `Events`,
+    route: `/#events`,
+    key: `events`,
+  },
+  {
+    name: `Complaint`,
+    route: `/#complaint`,
+    key: `complaint`,
+  },
+];
