@@ -9,16 +9,31 @@
         data-aos-duration="260"
       >
         <div class="flex flex-col space-y-4">
+          
           <span class="text-4xl lg:text-7xl t1">{{ current[0] }}</span>
           <span class="text-4xl lg:text-7xl t2">{{ current[1] }}</span>
         </div>
 
+        <b-row class="mt-3 text-left mb-3">
+          <b-col>
         <button
-          class="bg-blue-500 rounded-full text-base px-4 py-1 w-72 transition duration-500 ease-in-out transform hover:-translate-y-1"
+          class="bg-blue-500 rounded-full text-lg px-4 py-1 w-72 transition duration-500 ease-in-out transform hover:-translate-y-1"
           @click="mainConfig.openSignup"
         >
           JOIN AS VOLUNTEER
+        </button> </b-col>
+        
+        <b-col>
+        <button
+          class="bg-orange-600 rounded-full text-lg px-4 py-1 w-72 transition duration-500 ease-in-out transform hover:-translate-y-1"
+          @click="mainConfig.openReport"
+        >
+          RAISE A COMPLAINT
         </button>
+         </b-col>
+            </b-row>
+      
+
       </div>
     </div>
     <div
@@ -52,7 +67,7 @@
       <div
         class="bg-gray-600 rounded-xl lg:text-right text-center p-2 lg:p-8 flex flex-col space-y-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
       >
-        <span class="text-4xl">Vision</span>
+        <span class="text-3xl">Vision</span>
         <span class="text-justify"
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
           justo dignissim, dignissim ex aliquam, scelerisque turpis. Donec
@@ -67,7 +82,7 @@
       <div
         class="bg-gray-500 rounded-xl lg:text-left text:center p-2 lg:p-8 flex flex-col space-y-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
       >
-        <span class="text-4xl">Mission</span>
+        <span class="text-3xl">Mission</span>
         <span class="text-justify"
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
           justo dignissim, dignissim ex aliquam, scelerisque turpis. Donec
@@ -80,14 +95,47 @@
         >
       </div>
     </div>
-    <div class="bg-gray-400 w-full py-12 mx-auto space-y-8">
+    
+
+
+
+    <div 
+      id="volunteer"
+      class="flex flex-col space-y-4 text-base px-12 max-w-7xl mx-auto py-12">
+
+      <span class="text-3xl">Volunteers</span>
+        <span class="text-justify"
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+          justo dignissim, dignissim ex aliquam, scelerisque turpis. Donec
+          placerat, nulla nec pretium cursus, ligula nisi mollis augue, eget
+          ornare ipsum lacus tincidunt justo. Curabitur quis nunc lacinia,
+          venenatis magna vel, sagittis erat. Proin convallis gravida suscipit.
+          Sed quis nisl vel nunc pellentesque dapibus eget in lectus. Phasellus
+          ultrices ac lorem auctor iaculis. Etiam ut sem lobortis, mattis lectus
+          a, ultricies risus.</span
+        >
+
+      </div>
+
+
+
+
+
+    <div class="w-full py-12 mx-auto space-y-8">
+      <div 
+      class="flex flex-col space-y-4 max-w-7xl mx-auto py-12 px-12 items-left">
+      <span class="text-4xl">Leaders</span></div>
       <div
+        id="leaders"
         class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-between w-full"
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-delay="100"
         data-aos-duration="260"
       >
+      
+      
+
         <div
           v-for="item in events"
           :key="item.title"
@@ -125,7 +173,7 @@
       />
     </div>
     <div
-      id="report"
+      id="complaint"
       data-aos="fade-up"
       data-aos-easing="linear"
       data-aos-delay="100"
@@ -133,7 +181,7 @@
       class="max-w-7xl w-full mx-auto flex flex-col space-y-4 justify-between"
     >
      <div class="text-4xl mx-auto text-center text-black uppercase">
-        Report
+        Complaint
       </div>
       <div
         class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 justify-start max-w-7xl py-12 items-center"
@@ -159,8 +207,8 @@
       id="report-btn"
       class="max-w-7xl w-full mx-auto flex flex-col space-y-4 justify-between"
     >
-    <MiscMessage type="gray">Click the button below in order to file a report. Volunteers will be notified and will act accordingly.</MiscMessage>
-    <button class = "rounded-2xl bg-gray-600 text-white p-4 transition duration-500 ease-in-out transform hover:-translate-y-1" @click="mainConfig.openReport">Report</button>
+    <MiscMessage type="gray">Click the button below in order to file a complaint. Volunteers will be notified and will act accordingly.</MiscMessage>
+    <button class = "rounded-2xl bg-gray-600 text-white p-4 transition duration-500 ease-in-out transform hover:-translate-y-1" @click="mainConfig.openReport">File a Complaint</button>
     </div>
 
     <div class="mt-24" />
@@ -216,7 +264,7 @@ definePageMeta({
 });
 
 const typer = [
-  ["POLICE", "PUBLIC CONNECT"],
+  ["POLICE", "PUBLIC CONNECTOR"],
   ["WE CONNECT WITH", "PEOPLE"],
   ["WE HELP", "PEOPLE"],
 ];

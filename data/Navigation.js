@@ -9,9 +9,16 @@ export default [
       route: `/#about`,
       key: `about`,
     },
+
+    {
+      name: `Volunteers`,
+      route: `/#volunteer`,
+      key: `volunteer`,
+    },
+
     {
       name: `Events`,
-      route: `/#events`,
+      route: `/#leaders`,
       key: `events`,
     },
     {
@@ -20,8 +27,8 @@ export default [
       key: `gallery`,
     },
     {
-      name: `Report`,
-      route: `/`,
-      key: `report`,
+      name: `Complaint`,
+      route: `/#complaint`,
+      key: `complaint`,
     },
 ]

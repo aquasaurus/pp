@@ -42,8 +42,8 @@
         "
       >
         <div class="flex flex-col text-sm">
-            <span>Easwari Engineering College</span>
-            <span><br> Developed by students of <br> Artificial Intelligence & Data Science Department</span>
+            <span>Developed by students of </span>
+            <span><br> Easwari Engineering College - <br> Artificial Intelligence & Data Science Department</span>
         </div>
       </div>
     </div>
