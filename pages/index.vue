@@ -183,44 +183,40 @@
           ultrices ac lorem auctor iaculis. Etiam ut sem lobortis, mattis lectus
           a, ultricies risus.</span
         >
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        
           <CardList
-            class="mx-auto"
+            class="mx-left"
             title="Eligibility"
             :description="[
-              'Fraud',
-              'Cyber Crime',
-              'Safety Concerns',
-              'Awareness',
-              'Corruption',
+              'Person should be 18 years or above',
+              'Person should not possess any crime report or civil convictions before be a citizen of India.', 
+              'Required consent from parent/guardian is required if they are students',
+              'He/She Must have social responsibility and urge to contribute towards society.',
+              'Mandatory to carry an Indian Personal Identification such as Aadhar,etc.'
             ]"
           />
           <CardList
-            class="mx-auto"
+            class="mx-left"
             title="Perks"
             :description="[
-              'Fraud',
-              'Cyber Crime',
-              'Safety Concerns',
-              'Awareness',
-              'Corruption',
+              'Approval letter from government',
+              'Uniform/Jacket from PPC Org',
+              'PPC organization Identity card',
+              'Official PPC org Badge',
+              'A supportive community',
+              'Recognition and appreciation for exceptional volunteer',
             ]"
           />
-        </div>
+        
         <div class="py-4">
           <CardList
             title="How To Volunteer?"
             :description="[
-              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
-          justo dignissim, dignissim ex aliquam, scelerisque turpis.`,
-              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
-          justo dignissim, dignissim ex aliquam, scelerisque turpis.`,
-              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
-          justo dignissim, dignissim ex aliquam, scelerisque turpis.`,
-              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
-          justo dignissim, dignissim ex aliquam, scelerisque turpis.`,
-              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
-          justo dignissim, dignissim ex aliquam, scelerisque turpis.`,
+              'Person should be 18 years or above',
+              'Person should not possess any crime report or civil convictions before be a citizen of India.', 
+              'Required consent from parent/guardian is required if they are students',
+              'He/She Must have social responsibility and urge to contribute towards society.',
+              'Mandatory to carry an Indian Personal Identification such as Aadhar,etc.'
             ]"
           />
         </div>
@@ -364,33 +360,29 @@ const mainConfig = useModalConfig();
 
 const events = [
   {
-    title: "Hear You Out",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
-        justo dignissim, dignissim ex aliquam, scelerisque turpis. Donec
-        placerat, nulla nec pretium cursus, ligula nisi mollis augue, eget
-        ornare ipsum lacus tincidunt justo. Curabitur quis nunc lacinia,
-        venenatis magna vel, sagittis erat. Proin convallis gravida suscipit.
-        Sed quis nisl vel nunc pellentesque dapibus eget in lectus. Phasellus
-        ultrices ac lorem auctor iaculis. Etiam ut sem lobortis, mattis lectus
-        a, ultricies risus.`,
-    subtitle: "Lucky Man",
-
-    image: "/testpol.webp",
+    title: "C. THIYAGARAJAN",
+    description: `Running a security company for the past 20 years, I aspired to be a police officer 
+    since I was a child, but owing to time restraints, I was unable to do so. But, with an unwavering 
+    desire to contribute to society, began delivering social services to people at Chennai Central Railway Station. 
+    Following that, in November 2018, Dr. C Sailendrababu (IPS), Director of Police, unveiled the GRP 
+    app to assist passengers, and awareness for it was also established. After which, a student-led group, 
+    "Police Public Connector" distributed the GRP app to people in Central Egmore, Perambur, Tiruvannamalai, 
+    and all railway stations and also began conducting community service in Ambathur, Villivakkam, and 
+    numerous parts of the city.`,
+    subtitle: "FOUNDER - PPC",
+    image: "Thiyagarajan.jpeg",
   },
+
   {
-    title: "Support",
-    description: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
-        justo dignissim, dignissim ex aliquam, scelerisque turpis. Donec
-        placerat, nulla nec pretium cursus, ligula nisi mollis augue, eget
-        ornare ipsum lacus tincidunt justo. Curabitur quis nunc lacinia,
-        venenatis magna vel, sagittis erat. Proin convallis gravida suscipit.
-        Sed quis nisl vel nunc pellentesque dapibus eget in lectus. Phasellus
-        ultrices ac lorem auctor iaculis. Etiam ut sem lobortis, mattis lectus
-        a, ultricies risus. `,
-    subtitle: "Spiderman",
-
-    image: "/testpol.webp",
+    title: "DURAI KALIYARETHNAM",
+    description: ` Retired JUDGE & PRESIDING OFFICER - DEBT RECOVERY TRIBUNAL, he became a lawyer in 1969 and was authorized to be a judge in 1972, 
+        and served for 28 years as a district judge for numerous districts, states, and debt collection 
+        tribunals until retiring in 2000. Always thought that justice should be accessible to all, 
+        therefore he assisted many people through free legal aid.. `,
+    subtitle: "LEGAL ADVISOR - PPC",
+    image: "Durai Kaliyarethnam.jpeg",
   },
+
   {
     title: "Protect",
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
