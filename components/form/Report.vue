@@ -1,8 +1,8 @@
 <template>
   <div
-    class="bg-white dark:bg-gray-900 shadow-xl rounded-xl max-w-2xl w-full flex flex-col items-center space-y-8 p-4"
+    class="bg-white dark:bg-gray-900 shadow-xl rounded-xl max-w-2xl w-full flex flex-col items-center space-y-2 lg:space-y-8 p-4 overflow-y-auto max-h-screen"
   >
-    <span class="text-2xl font-semibold text-center">Create Report</span>
+    <span class="text-2xl font-semibold text-center">Create Complaint</span>
     <div class="flex flex-col space-y-4">
       <div
         class="grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-4 items-center p-4"
@@ -49,10 +49,10 @@
         />
       </div>
     </div>
-    <MiscMessage :class="`${isBad ? 'opacity-100' : 'opacity-0'} transition duration-500 ease-in-out`" type="error">
+    <MiscMessage :class="`${isBad ? 'max-h-[20rem]' : 'max-h-0 overflow-y-hidden'} transition-all duration-500 ease-in-out`" type="error">
       Please ensure that name, phone number and content are filled.
     </MiscMessage>
-    <MiscMessage :class="`${isGood ? 'opacity-100' : 'opacity-0'} transition duration-500 ease-in-out`" type="success">
+    <MiscMessage :class="`${isGood ? 'max-h-[20rem]' : 'max-h-0 overflow-y-hidden'} transition-all duration-500 ease-in-out`" type="success">
       Your report has been submitted!
     </MiscMessage>
     <div class="max-w-sm font-bold">
